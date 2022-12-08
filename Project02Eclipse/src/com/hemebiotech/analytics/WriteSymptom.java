@@ -3,7 +3,10 @@ package com.hemebiotech.analytics;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class WriteSymptom implements ISymptomWriter {
 
@@ -14,7 +17,7 @@ public class WriteSymptom implements ISymptomWriter {
 	}
 
 	@Override
-	public void ecritSymptom(List<String> listeSymptom) {
+	public void writeSymptom(Map<String, Integer>  listeSymptom) {
 		// TODO Auto-generated method stub
 
 		// next generate output a extraire
@@ -22,8 +25,11 @@ public class WriteSymptom implements ISymptomWriter {
 			FileWriter filewriter = new FileWriter(filepath);
 			BufferedWriter writer = new BufferedWriter(filewriter);
 			if (listeSymptom != null && !listeSymptom.isEmpty()) {
-				for (String symptom : listeSymptom) {
-					writer.write(symptom);
+				Set set = listeSymptom.entrySet();
+				Iterator i = set.iterator();
+				while(i.hasNext()) {
+					Map.Entry entry = (Map.Entry)i.next();
+					writer.write(String.valueOf(entry.getKey() + " : " + entry.getValue()));
 					writer.newLine();
 				}
 			} else {

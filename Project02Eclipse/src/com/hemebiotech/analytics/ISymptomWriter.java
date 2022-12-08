@@ -1,9 +1,12 @@
 package com.hemebiotech.analytics;
 
 import java.util.List;
+import java.util.Map;
 
 public interface ISymptomWriter {
-	
-	void ecritSymptom(List<String> listeSymptom);
 
+	public void writeSymptom(Map<String, Integer>  listeSymptom);
+	
+
+	
 }
