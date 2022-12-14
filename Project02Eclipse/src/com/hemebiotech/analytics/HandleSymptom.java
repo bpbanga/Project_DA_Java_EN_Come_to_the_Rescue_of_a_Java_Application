@@ -14,7 +14,7 @@ import java.util.TreeMap;
 public class HandleSymptom implements IHandleSymptom {
 
 	public HandleSymptom() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public Map<String, Integer> mapSymptoms(List<String> symptoms){

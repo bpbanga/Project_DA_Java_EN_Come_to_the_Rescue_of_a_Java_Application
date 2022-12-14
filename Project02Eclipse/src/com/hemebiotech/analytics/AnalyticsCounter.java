@@ -6,17 +6,21 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * 
+ * 
+ * main function of the application
+ */
 public class AnalyticsCounter {
 
 	public static void main(String args[]) throws Exception {
 		
 		ReadSymptomDataFromFile readSymptom = new ReadSymptomDataFromFile("symptoms.txt");
-		List<String> l = readSymptom.GetSymptoms();
+		List<String> reading = readSymptom.GetSymptoms();
 
 		
-		HandleSymptom h = new HandleSymptom();
-		Map<String, Integer> symptoms = h.mapSymptoms(l);
+		HandleSymptom treatment = new HandleSymptom();
+		Map<String, Integer> symptoms = treatment.mapSymptoms(reading);
 
 		WriteSymptom writeSymptom = new WriteSymptom ("result.out");
 		writeSymptom.writeSymptom(symptoms);

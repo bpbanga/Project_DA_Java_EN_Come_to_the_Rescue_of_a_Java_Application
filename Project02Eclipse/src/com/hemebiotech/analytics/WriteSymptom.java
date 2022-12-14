@@ -15,6 +15,10 @@ public class WriteSymptom implements ISymptomWriter {
 	public WriteSymptom(String filepath) {
 		this.filepath = filepath;
 	}
+	/**
+	 * 
+	 * function allowing the writing of a list of symptoms in a given file
+	 */
 
 	@Override
 	public void writeSymptom(Map<String, Integer>  listeSymptom) {
