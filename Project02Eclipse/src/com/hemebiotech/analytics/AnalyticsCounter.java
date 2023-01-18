@@ -15,14 +15,14 @@ public class AnalyticsCounter {
 
 	public static void main(String args[]) throws Exception {
 		
-		ReadSymptomDataFromFile readSymptom = new ReadSymptomDataFromFile("symptoms.txt");
+		ISymptomReader readSymptom = new ReadSymptomDataFromFile("symptoms.txt");
 		List<String> reading = readSymptom.GetSymptoms();
 
 		
-		HandleSymptom treatment = new HandleSymptom();
+		IHandleSymptom treatment = new HandleSymptom();
 		Map<String, Integer> symptoms = treatment.mapSymptoms(reading);
 
-		WriteSymptom writeSymptom = new WriteSymptom ("result.out");
+		ISymptomWriter writeSymptom = new WriteSymptom ("result.out");
 		writeSymptom.writeSymptom(symptoms);
 		
 		

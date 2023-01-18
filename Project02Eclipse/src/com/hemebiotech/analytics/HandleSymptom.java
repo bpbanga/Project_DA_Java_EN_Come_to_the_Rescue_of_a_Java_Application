@@ -12,6 +12,8 @@ import java.util.Set;
 import java.util.TreeMap;
 
 public class HandleSymptom implements IHandleSymptom {
+	
+
 
 	public HandleSymptom() {
 		

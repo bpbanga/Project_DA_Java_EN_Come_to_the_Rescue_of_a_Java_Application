@@ -11,14 +11,15 @@ import java.util.Set;
 public class WriteSymptom implements ISymptomWriter {
 
 	private String filepath;
+	/**
+	 * 
+	 * @param filepath a full or partial path to file with symptom strings in it, one per line
+	 */
 
 	public WriteSymptom(String filepath) {
 		this.filepath = filepath;
 	}
-	/**
-	 * 
-	 * function allowing the writing of a list of symptoms in a given file
-	 */
+
 
 	@Override
 	public void writeSymptom(Map<String, Integer>  listeSymptom) {
